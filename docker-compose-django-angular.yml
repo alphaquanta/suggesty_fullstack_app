@@ -5,7 +5,7 @@ services:
     container_name: suggesty_backend
     build: suggesty_backend_django
     env_file:
-      - ./suggesty_backend/django_backend/.env
+      - ./suggesty_backend_django/.env
     ports:
       - "8000:8000"
     networks:
