@@ -54,6 +54,7 @@ All the given packages and their versions are used packagaes in the development 
 This application includes Docker configuration files and compose file to be deployed via Docker seamlessly.
 Despite it is not mandatory, it is recommended to use automated option to run application given below.
 
+Current configuration of application is for local execution. For public access; Frontend envorinment values should be configured accordingly (BaseURL). 
 Application can be deployed/run with one of the options below:
 
 * Clone the repository into the desired folder.
