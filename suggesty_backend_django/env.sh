@@ -1,0 +1,5 @@
+set SECRET_KEY = "5w%ok9k+wry11a+pjav62q4!llb_qr0fg3ove#2kl(*vkw=hr="
+set SPOTIFY_CLIENTID = "47023500e54a405f933b8abf0a90b89e" 
+set SPOTIFY_CLIENTSECRET = "4a6c73d77a774dd382988b2b79a96570"
+set SPOTIFY_API_URL = "https://api.spotify.com/"
+set RuntimeEnv = "DEV"

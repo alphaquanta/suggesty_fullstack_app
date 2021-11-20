@@ -1,0 +1,2 @@
+class TokenNull(Exception):
+    pass
