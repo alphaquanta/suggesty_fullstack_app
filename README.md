@@ -4,6 +4,10 @@
 # Introduction
 Suggesty is an web application that gives a playlist of top 10 songs of random artist/band according to the given input from spotify.
 
+After setup application can be accessed from
+http://localhost 
+http://localhost:4200
+
 ### Modules
 Suggesty consists of two modules; Frontend and Backend applications.
 
