@@ -1,0 +1,42 @@
+<div class= "searchbox-container">
+<mat-grid-list cols="2" rowHeight="2vh" gutterSize="10px">
+    <mat-grid-tile
+    rowspan="1"
+    colspan="2">
+    <mat-label>
+        Type a Genre to Create Playlist
+    </mat-label> 
+    </mat-grid-tile>
+    <mat-grid-tile 
+    rowspan="3"
+    colspan="2">
+        <input matInput  placeholder="Ex: rock" (change)="onSearchChanged($event)" [value]="searchQuery">
+    </mat-grid-tile> 
+    <mat-grid-tile
+    rowspan="2"
+    colspan="1">
+    <button mat-flat-button color (click)="onSearchClicked()" color="primary">Search</button>
+    </mat-grid-tile>
+    <mat-grid-tile
+    rowspan="2"
+    colspan="1">
+    <button mat-flat-button color="primary" (click)="clearSearch()">Clear</button>
+    </mat-grid-tile>
+    <mat-grid-tile *ngIf = "requestState!='idle'"
+    rowspan="10"
+    colspan="2">
+    <div *ngIf="requestState == 'loading'">
+        <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+    <div  *ngIf="requestState == 'error'">
+        <h2 class="state-text">No track found with given genre. Try another genre.</h2>
+        <mat-icon class="state-container">error_outline</mat-icon>
+    </div>
+</mat-grid-tile>
+</mat-grid-list>
+
+
+<div *ngFor="let track of tracks;let i = index">
+    <app-track-item [track]="track"></app-track-item>
+</div>
+</div>

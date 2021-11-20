@@ -1,0 +1,20 @@
+.searchbox-container {width :75vw ;margin: auto;padding-top: 10px;}
+.searchbox-container input { min-width:70vw; min-height:60%;max-height: 75%; border-color: darkgray; background-color: darkgray;}
+.searchbox-container button {min-width: 100%; min-height: 100%;}
+.mat-flat-button {border-radius: 0px;}
+
+.state-container
+{
+    width: 75vw;
+    margin: auto;
+    text-align: center;
+    font-size: 15rem;
+    color:palevioletred;
+}
+.state-text
+{
+    text-align: center;
+    font-size: 1rem;
+    margin: auto;
+    color: whitesmoke;
+}
