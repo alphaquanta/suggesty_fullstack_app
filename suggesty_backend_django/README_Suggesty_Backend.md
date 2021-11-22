@@ -1,7 +1,11 @@
 # Suggesty Backend Application
 Suggesty Backend Application developed with Django Framework.
 
-Packages used in this project are listed in requirements.txt file with their versions.
+Packages used in this project are:
+
+* django==3.2.8
+* django-cors-headers==3.10.0
+* requests==2.25.1
 
 Instructions of how to run the application are given in main ReadMe.md file in root directory of repository.
 
