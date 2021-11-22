@@ -1,4 +1,4 @@
-::Development tool purposes, execute everytime I did update the code, so I can update images on remote.
+#!/bin/bash
 cd ..
 cd ..
 cd suggesty_backend_django

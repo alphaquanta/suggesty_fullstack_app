@@ -1,3 +1,4 @@
+#!/bin/bash
 cd ../../k8s
 ECHO "Starting: Frontend and Backend Deployment
 kubectl apply -f fe-depl.yaml & kubectl apply -f be-depl.yaml

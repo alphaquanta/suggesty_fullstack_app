@@ -21,9 +21,18 @@
     >
     <button *ngIf="track.preview_url" mat-mini-fab color="primary">
         <mat-icon (click)="playPreview()">{{icon_reference}}
-
         </mat-icon>
       </button>
+      <button *ngIf="track.preview_url" mat-mini-fab color="primary">
+        <mat-icon >
+            <a 
+            href="{{track.preview_url}}" 
+            target='_blank'>
+                link
+            </a>
+        </mat-icon>
+      </button>
+
     </mat-grid-tile>
 </mat-grid-list>
 </div>

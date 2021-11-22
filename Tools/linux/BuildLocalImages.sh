@@ -1,7 +1,7 @@
-::Development tool purposes, execute everytime I did update the code, so I can update images on remote.
+#!/bin/bash
 cd ..
 cd ..
-suggesty_backend_django
+cd suggesty_backend_django
 docker build  -t alphaquanta/suggestybackend:django .
 cd ..
 cd suggesty_frontend_angular
