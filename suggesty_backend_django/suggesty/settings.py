@@ -44,7 +44,7 @@ try:
 except:
     DEBUG = True #In case value not in the env values, assume it is dev env.
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

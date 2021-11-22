@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { catchError, throwError } from 'rxjs';
 
-
 export interface getPlaylistResponse {
   "RESULT"?:string
   "MESSAGE"?:string
@@ -23,7 +22,7 @@ export class APIClientService {
 
   getPlaylist(genre:string):Observable<getPlaylistResponse>
   {
-    return this.http.get<getPlaylistResponse>(baseURL+"/v1/tracks/"+genre);
+    return this.http.get<getPlaylistResponse>(baseURL+"/api/v1/tracks/"+genre);
   }
 
 }

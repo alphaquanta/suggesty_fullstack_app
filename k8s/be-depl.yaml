@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: suggesty-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: suggesty-be
+  template:
+    metadata:
+      labels:
+        app: suggesty-be
+    spec:
+      containers:
+        - name:  suggesty-be
+          image:  alphaquanta/suggestybackend:django
+          imagePullPolicy: "Always"
+          env:
+            - name: SECRET_KEY
+              value: "5w%ok9k+wry11a+pjav62q4!llb_qr0fg3ove#2kl(*vkw=hr="
+            - name: SPOTIFY_CLIENTID
+              value: "47023500e54a405f933b8abf0a90b89e" 
+            - name: SPOTIFY_CLIENTSECRET
+              value: "4a6c73d77a774dd382988b2b79a96570"
+            - name: SPOTIFY_API_URL
+              value: "https://api.spotify.com/"
+            - name: RuntimeEnv
+              value: "DEV"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: be-cluster-srv
+spec:
+  selector:
+    app: suggesty-be
+  ports:
+  - name: suggesty-be
+    port: 8000
+    targetPort: 8000
+    protocol: TCP

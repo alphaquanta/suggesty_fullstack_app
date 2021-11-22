@@ -1,4 +1,5 @@
 import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
+import { Subscriber } from 'rxjs';
 import { APIClientService, getPlaylistResponse } from '../apiclient/apiclient.service';
 
 
@@ -30,7 +31,9 @@ export class SearchboxComponent{
   {
     this.tracks = []
     this.requestState = "loading"
-    this.apiClient.getPlaylist(this.searchQuery).subscribe( response => {
+    let request = this.apiClient.getPlaylist(this.searchQuery);
+
+    request.subscribe( response => {
       this.tracks = response.data ?? []
       
     },
@@ -43,7 +46,6 @@ export class SearchboxComponent{
       else 
       this.requestState = "idle"
     }
-
     )
   }
 

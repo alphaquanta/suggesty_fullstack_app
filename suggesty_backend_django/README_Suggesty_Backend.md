@@ -13,7 +13,7 @@ This application ready-to-use with Docker.
 #### Get Playlist
 
 ```http
-  GET /v1/tracks/${genre}
+  GET /api/v1/tracks/${genre}
 ```
 
 | Parameter | Type     | Description                       |
@@ -35,12 +35,12 @@ This application ready-to-use with Docker.
   "RESULT":string
   "MESSAGE":string
   "data":
-        {
-        artist:string
-        track:string
-        album_image_url:string
-        preview_url:string|null
-        }
+  {
+    artist:string
+    track:string
+    album_image_url:string
+    preview_url:string|null
+  }
 } 
 ````
 

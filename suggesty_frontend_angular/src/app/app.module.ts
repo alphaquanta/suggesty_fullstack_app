@@ -17,8 +17,7 @@ import { MatProgressSpinnerModule} from '@angular/material/progress-spinner'
   declarations: [
     AppComponent,
     SearchboxComponent,
-    TrackItemComponent,
-
+    TrackItemComponent
   ],
   imports: [
     BrowserModule,

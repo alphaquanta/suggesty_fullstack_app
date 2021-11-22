@@ -18,5 +18,5 @@ from django.urls import path
 from apps.tracks import views
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('v1/tracks/<str:genre>',views.tracks)
+    path('api/v1/tracks/<str:genre>',views.tracks)
 ]

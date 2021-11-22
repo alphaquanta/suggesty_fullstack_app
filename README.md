@@ -6,7 +6,8 @@ Suggesty is an web application that gives a playlist of top 10 songs of random a
 
 After setup application can be accessed from
 http://localhost 
-http://localhost:4200
+If Setting Host approved(Windows Only with Automated Configuration)
+http://suggesty.com
 
 ### Modules
 Suggesty consists of two modules; Frontend and Backend applications.
@@ -33,8 +34,6 @@ To avoid problems, developer must create account and generate key for self from 
 To able to reach Dockerized applications or to locally hosted applications be able to run; following ports must be open and not in use. (with current configuration)
 * 80
 * 8000
-* 4200
-
 
 All the given packages and their versions are used packagaes in the development environment so it is known working configuration. Any version above or below from given might work but not tested.
 ### Without Docker
@@ -43,6 +42,7 @@ All the given packages and their versions are used packagaes in the development 
 * Django 3.2.8 (via pip)
 * django-cors-headers 3.10.0 (via pip)
 * requests 2.25.1 (via pip)
+* Node.js 16.13.0
 * npm 8.1.1
 
      The npm manages packages related with Frontend. Those packages are not listed in this file, they can be found in package.json file inside Frontend applicaiton folder
@@ -50,15 +50,17 @@ All the given packages and their versions are used packagaes in the development 
 
 ### With Docker
 * Docker 20.10.7
-* npm 8.1.1
 
-     The npm manages packages related with Frontend. Those packages are not listed in this file, they can be found in package.json file inside Frontend applicaiton folder
+### With Kubernetes
+Docker is pre-requirment. Check [### With Docker] section of requirements.
+*kubectl 1.21 (both for client and server)
 
 # Setup
 This application includes Docker configuration files and compose file to be deployed via Docker seamlessly.
 Despite it is not mandatory, it is recommended to use automated option to run application given below.
 
-Current configuration of application is for local execution. For public access; Frontend envorinment values should be configured accordingly (BaseURL). 
+With current configuration application can be deployed for public use after proper port forwordings.
+
 Application can be deployed/run with one of the options below:
 
 * Clone the repository into the desired folder.
@@ -87,7 +89,17 @@ If there is no change since last build or execuding Option 1.1, this option is m
 
 This option will execute Docker agaist the configuration files and will run the applications with given settings.
 
-### Option 2: Manual (Without Docker)
+#### Option 2: Kubernetes Start (With Docker)
+Application can be deployed with Kubernetes.
+* Open Terminal navigate project's folder(root) and execute:
+        
+        k8s_StartUp_Windows.bat
+
+        or
+
+        k8s_StartUp_Linux.sh[Not Tested]
+
+### Option 3: Manual (Without Docker)
 Instead of using docker, application can be executed on local machine, without docker as well.
 To achieve this: 
 

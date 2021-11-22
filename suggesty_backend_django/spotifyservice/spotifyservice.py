@@ -5,7 +5,7 @@ from common.Exceptions import TokenNull
 from spotifyservice.utils import generateTopTracksResponse, getRandomArtistByGenre, getRequestHeader, sortArtistsByPopularity
 from suggesty.settings import SPOTIFY_API_URL, SPOTIFY_CLIENTID, SPOTIFY_CLIENTSECRET
 
-#TODO Abstraction
+
 class SpotifyService:
     __requestToken = None
 

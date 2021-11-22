@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: suggesty-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: suggesty-fe
+  template:
+    metadata:
+      labels:
+        app: suggesty-fe
+    spec:
+      containers:
+        - name:  suggesty-fe
+          image:  alphaquanta/suggestyfrontend:angular
+          imagePullPolicy: "Always"
+          env:
+            - name: BACKEND_API
+              value: "http://be-npservice:8000"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe-cluster-srv
+spec:
+  selector:
+    app: suggesty-fe
+  ports:
+  - name: suggesty-fe
+    port: 80
+    targetPort: 80
+    protocol: TCP
+

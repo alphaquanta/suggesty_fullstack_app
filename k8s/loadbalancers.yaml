@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe-loadbalancer
+  labels:
+    app: suggesty-fe
+spec:
+  type: LoadBalancer
+  selector:
+    app: suggesty-fe
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: be-loadbalancer
+  labels:
+    app: suggesty-be
+spec:
+  type: LoadBalancer
+  selector:
+    app: suggesty-be
+  ports:
+  - port: 8000
+    targetPort: 8000
+

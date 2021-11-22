@@ -1,8 +1,7 @@
 version: "3.5"
 services:     
-  suggesty_backend:
-    restart: always 
-    container_name: suggesty_backend
+  suggestybackend:
+    container_name: suggestybackend
     build: suggesty_backend_django
     env_file:
       - ./suggesty_backend_django/.env
@@ -11,20 +10,19 @@ services:
     networks:
       - backend.api
 
-  suggesty_frontend:
-    restart: always
-    container_name: suggesty_frontend
+  suggestyfrontend:
+    container_name: suggestyfrontend
     build: suggesty_frontend_angular
     ports:
       - "80:80"
-      - "4200:80"
+
     networks:
       - frontend.api
 
 networks:
   backend.api:
     name:
-      suggesty_backend
+      suggestybackend
   frontend.api:
     name:
-      suggesty_frontend
+      suggestyfrontend
